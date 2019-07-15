@@ -10,11 +10,13 @@ import { HttpClientModule } from '@angular/common/http';
 // Added Extra Packages
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
+import { SingleContactComponent } from './Components/single-contact/single-contact.component';
 @NgModule({
   declarations: [
     AppComponent,
     NewContactPageComponent,
-    ContactListComponent
+    ContactListComponent,
+    SingleContactComponent
   ],
   imports: [
     BrowserModule,

@@ -14,8 +14,8 @@
     </thead>
     <tbody>
     <tr *ngFor="let contact of contactList;let i= index">
-      <td>{{i + 1}}</td>
-      <td>{{contact.name}}</td>
+      <td>{{contact.id}}</td>
+      <td><a [routerLink]="['/contact/',contact.id]">{{contact.name}}</a></td>
       <td>{{contact.dob}}</td>
       <td>{{contact.email}}</td>
       <td>{{contact.gender}}</td>

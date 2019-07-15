@@ -14,4 +14,7 @@ export class ContactServiceService {
   getListContact() {
     return this.http.get('');
   }
+  getsingleData(id) {
+      return this.http.get('');
+  }
 }
