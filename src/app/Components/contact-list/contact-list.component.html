@@ -1,0 +1,56 @@
+<div class="container">
+  <h2 class="center">List of Contacts</h2>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>No.</th>
+      <th>Name</th>
+      <th>Date Of Birth</th>
+      <th>Email</th>
+      <th>Gender</th>
+      <th>Budget</th>
+      <th>Display Info</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let contact of contactList;let i= index">
+      <td>{{i + 1}}</td>
+      <td>{{contact.name}}</td>
+      <td>{{contact.dob}}</td>
+      <td>{{contact.email}}</td>
+      <td>{{contact.gender}}</td>
+      <td>{{contact.budget}}</td>
+      <td><i class="fa fa-eye pointer" aria-hidden="true" (click)="openSingleRow(content, contact)"></i></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--Single Row Data Popup-->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Contact Information</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label>Name : {{singleRowData.name}}</label>
+      </div>
+      <div class="form-group">
+        <label>Date of Birth: {{singleRowData.dob}}</label>
+      </div>
+      <div class="form-group">
+        <label>Email: {{singleRowData.email}}</label>
+      </div>
+      <div class="form-group">
+        <label>Gender: {{singleRowData.gender}}</label>
+      </div>
+      <div class="form-group">
+        <label>Budget: {{singleRowData.budget}}</label>
+      </div>
+    </form>
+  </div>
+</ng-template>
