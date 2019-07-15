@@ -1,25 +1,12 @@
-<div class="container">
-  <h2 class="center">Single Contacts Info</h2>
-  <table class="table table-bordered">
-    <thead>
-    <tr>
-      <th>No.</th>
-      <th>Name</th>
-      <th>Date Of Birth</th>
-      <th>Email</th>
-      <th>Gender</th>
-      <th>Budget</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let contact of singleRow;let i= index">
-      <td>{{contact.id}}</td>
-      <td>{{contact.name}}</td>
-      <td>{{contact.dob}}</td>
-      <td>{{contact.email}}</td>
-      <td>{{contact.gender}}</td>
-      <td>{{contact.budget}}</td>
-    </tr>
-    </tbody>
-  </table>
+<div class="card">
+  <div class="card-header">
+    Single Contacts Info
+  </div>
+  <div class="card-body">
+    <h5>Name : <b>{{singleRow.name}}</b></h5>
+    <h5>Date Of Birth : <b>{{singleRow.dob}}</b></h5>
+      <h5>Email : <b>{{singleRow.email}}</b></h5>
+      <h5>Gender : <b>{{singleRow.gender}}</b></h5>
+      <h5>Budget : <b>{{singleRow.budget}}</b></h5>
+  </div>
 </div>

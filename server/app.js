@@ -1,6 +1,7 @@
 const feathers = require('@feathersjs/feathers');
 const express = require('@feathersjs/express');
 const socketio = require('@feathersjs/socketio');
+const cors = require('cors');
 const contactService = require('./services/contact.service')
 
   // Create an Express compatible Feathers application instance.
@@ -17,6 +18,7 @@ app.configure(socketio());
 
 app.use(express.errorHandler());
 
+app.use(cors());
 
 app.use('/contact', contactService);
 

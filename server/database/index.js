@@ -23,4 +23,8 @@ const sequelize = new Sequelize('demo', 'root', 'password', {
 
   sequelize.Contacts = Contacts(sequelize, Sequelize);
 
+  sequelize.sync({ force: true }).then(() => {
+        console.log(`Database & tables created!`)
+    });
+
   module.exports = sequelize;

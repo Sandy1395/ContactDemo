@@ -13,8 +13,7 @@ export class ContactListComponent implements OnInit {
   constructor(private router: Router, private modalService: NgbModal, private contactService: ContactServiceService) { }
 
   ngOnInit() {
-    this.contactList = [{id: 1, name: 'abc', dob: '10-3-2019', email: 'abc@g.com', gender: 'male', budget: 200}, {id: 2, name: 'abcd', dob: '12-6-2019', email: 'abc@g.com', gender: 'female', budget: 200}, {id: 3, name: 'abcde', dob: '10-7-2019', email: 'abc@g.com', gender: 'male', budget: 200}];
-    // this.getAllContact();
+    this.getAllContact();
   }
   getAllContact() {
     this.contactService.getListContact().subscribe((res) => {

@@ -7,19 +7,18 @@ import {ContactServiceService} from '../../../Services/contact-service.service';
   styleUrls: ['./single-contact.component.css']
 })
 export class SingleContactComponent implements OnInit {
-  singleRow: any = [];
+  singleRow = {};
   constructor(private route: ActivatedRoute, private contactService: ContactServiceService) { }
 
   ngOnInit() {
-      this.route.paramMap.subscribe(params => {
-              if (params) {
-                  this.contactService.getsingleData(params['id']).subscribe((res) => {
-                      this.singleRow = res;
-                  }, (err) => {
-                      console.log('error', err);
-                  });
-              }
-      });
+      const id = this.route.snapshot.paramMap.get('id');
+      if (id) {
+          this.contactService.getsingleData(id).subscribe((res) => {
+              this.singleRow = res;
+          }, (err) => {
+              console.log('error', err);
+          });
+      }
   }
 
 }

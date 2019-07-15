@@ -17,15 +17,17 @@ export class NewContactPageComponent implements OnInit {
     { value: 'Female', display: 'Female' },
     { value: 'Male', display: 'Male' }
   ];
-    successMessage: boolean = false;
+  successMessage: boolean = false;
   constructor(private contactService: ContactServiceService) { }
   ngOnInit() {
   }
 onSubmit() {
     const data = {...this.model};
     data.dob = moment(this.model.dob).format('YYYY-MM-DD');
-    this.contactService.addContacts(data);
-    this.successMessage = true;
-    this.myForm.resetForm();
+    this.contactService.addContacts(data).subscribe((res) => {
+        console.log(res);
+        this.successMessage = true;
+        this.myForm.resetForm();
+    });
 }
 }
