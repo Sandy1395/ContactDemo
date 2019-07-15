@@ -20,7 +20,7 @@
       <td>{{contact.email}}</td>
       <td>{{contact.gender}}</td>
       <td>{{contact.budget}}</td>
-      <td><i class="fa fa-eye pointer" aria-hidden="true" (click)="openSingleRow(content, contact)"></i></td>
+      <td><i class="fa fa-eye pointer" aria-hidden="true" title="Display single row" (click)="openSingleRow(content, contact)"></i></td>
     </tr>
     </tbody>
   </table>
@@ -35,21 +35,26 @@
     </button>
   </div>
   <div class="modal-body">
-    <form>
-      <div class="form-group">
-        <label>Name : {{singleRowData.name}}</label>
+    <form class="custom-form">
+      <div class="form-group m-0 custom-form-div p-2">
+        <b><label class="w-50 m-0">Name : </label></b>
+        <span>{{singleRowData.name}}</span>
       </div>
-      <div class="form-group">
-        <label>Date of Birth: {{singleRowData.dob}}</label>
+      <div class="form-group m-0 custom-form-div p-2">
+        <b><label class="w-50 m-0">Date of Birth:</label></b>
+        <span>{{singleRowData.dob}}</span>
       </div>
-      <div class="form-group">
-        <label>Email: {{singleRowData.email}}</label>
+      <div class="form-group m-0 custom-form-div p-2">
+        <b><label class="w-50 m-0">Email:</label></b>
+        <span>{{singleRowData.email}}</span>
       </div>
-      <div class="form-group">
-        <label>Gender: {{singleRowData.gender}}</label>
+      <div class="form-group m-0 custom-form-div p-2">
+        <b><label class="w-50 m-0">Gender: </label></b>
+        <span>{{singleRowData.gender}}</span>
       </div>
-      <div class="form-group">
-        <label>Budget: {{singleRowData.budget}}</label>
+      <div class="form-group m-0 custom-form-div p-2">
+        <b><label class="w-50 m-0">Budget: </label></b>
+        <span>{{singleRowData.budget}}</span>
       </div>
     </form>
   </div>

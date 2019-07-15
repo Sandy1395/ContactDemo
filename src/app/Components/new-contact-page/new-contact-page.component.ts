@@ -1,6 +1,6 @@
+import * as moment from 'moment';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Contact } from  '../../Model/contactForm';
-import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 import { ContactServiceService } from '../../Services/contact-service.service';
 import {NgbDateAdapter, NgbDateNativeAdapter} from '@ng-bootstrap/ng-bootstrap';
@@ -14,15 +14,18 @@ export class NewContactPageComponent implements OnInit {
   model = new Contact();
   @ViewChild(NgForm) myForm: NgForm;
   public genders = [
-    { value: 'F', display: 'Female' },
-    { value: 'M', display: 'Male' }
+    { value: 'Female', display: 'Female' },
+    { value: 'Male', display: 'Male' }
   ];
-  constructor(private toastr: ToastrService, private contactService: ContactServiceService) { }
+    successMessage: boolean = false;
+  constructor(private contactService: ContactServiceService) { }
   ngOnInit() {
   }
 onSubmit() {
-    this.contactService.addContacts(this.model);
-    this.toastr.success('Added Contact Successfully', 'Success Message');
+    const data = {...this.model};
+    data.dob = moment(this.model.dob).format('YYYY-MM-DD');
+    this.contactService.addContacts(data);
+    this.successMessage = true;
     this.myForm.resetForm();
 }
 }

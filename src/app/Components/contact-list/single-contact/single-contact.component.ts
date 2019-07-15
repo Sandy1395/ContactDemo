@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {ContactServiceService} from '../../Services/contact-service.service';
+import {ContactServiceService} from '../../../Services/contact-service.service';
 @Component({
   selector: 'app-single-contact',
   templateUrl: './single-contact.component.html',
@@ -13,10 +13,10 @@ export class SingleContactComponent implements OnInit {
   ngOnInit() {
       this.route.paramMap.subscribe(params => {
               if (params) {
-                  this.contactService.getsingleData(params).subscribe((res) => {
+                  this.contactService.getsingleData(params['id']).subscribe((res) => {
                       this.singleRow = res;
-                  }, err => {
-                      console.log(err);
+                  }, (err) => {
+                      console.log('error', err);
                   });
               }
       });

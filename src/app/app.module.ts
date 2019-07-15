@@ -9,14 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 // Added Extra Packages
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ToastrModule } from 'ngx-toastr';
-import { SingleContactComponent } from './Components/single-contact/single-contact.component';
+import { SingleContactComponent } from './Components/contact-list/single-contact/single-contact.component';
+import { NavigationBarComponent } from './Components/navigation-bar/navigation-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
     NewContactPageComponent,
     ContactListComponent,
-    SingleContactComponent
+    SingleContactComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,
@@ -24,10 +25,9 @@ import { SingleContactComponent } from './Components/single-contact/single-conta
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    NgbModule,
-    ToastrModule.forRoot()
+    NgbModule
   ],
-  exports: [ContactListComponent],
+  exports: [ContactListComponent, NavigationBarComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

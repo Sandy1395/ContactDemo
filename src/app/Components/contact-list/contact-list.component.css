@@ -4,3 +4,9 @@
 .center {
   text-align: center;
 }
+.custom-form{
+  border: 1px solid #b9b9b9;
+}
+.custom-form-div:not(:last-child){
+  border-bottom:1px solid #b9b9b9;
+}
