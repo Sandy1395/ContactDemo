@@ -17,6 +17,6 @@
     "cors": "^2.8.5",
     "feathers-sequelize": "^6.0.0",
     "mysql2": "^1.6.5",
-    "sequelize": "^5.10.1"
+    "sequelize": "^5.15.1"
   }
 }
